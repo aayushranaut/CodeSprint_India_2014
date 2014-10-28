@@ -1,0 +1,25 @@
+Since there are n mice and n holes, each hole should be assigned to one mouse and we can not leave any holes unassigned. Let's sort both mice and holes and from now on we will use the sorted version of them. 
+We can ask ourselves this question: What is the best choice for the leftmost mouse? If we look at the mice and the holes in increasing order of their coordinates in a line, we can make a good guess about the structure of the optimal assignment. The best choice for the leftmost mouse is the leftmost hole. The first mouse and the first hole are removed and we can do the rest of the assignments, then the best choice for the second leftmost mouse is the second leftmost hole, and so on. So if we assign them like this: 
+m1 -> h1 
+m2 -> h2 
+... 
+mn -> hn 
+Then ourAnswer = MAX( |mi - hi| ) 1 ≤ i ≤ n. ourAnswer is the time that all mice are in their corresponding hole. 
+In order to prove ourAnswer is correct and optimal, we have to prove that our way of assigning the mice to the holes is as good as any other assignment.
+Let's think we have an arbitrary assignment. 
+m1 -> hr1 
+m2 -> hr2 
+... 
+mn -> hrn 
+answer0 = MAX( |mi - hri| ) 1 ≤ i ≤ n 
+In this assignment mice are in increasing order, but holes are not. In order to turn this assignment to our assignment we need to decrease number of inversions and make holes increasing too. For example if m7 -> h6 and m11 -> h4, then this is an inversion, since 7 < 11 and 6 > 4. We will change this to m7 -> h4 and m11 -> h6. 
+a1 = |m7 - h6|, a2 = |m11 - h4| 
+b1 = |m7 - h4|, b2 = |m11 - h6| 
+MAX(b1, b2) ≤ MAX(a1, a2), this is true, check it out. 
+By continueing this we will turn this assignment to our assignment and at each step either we will make answer0 better or we won't change answer0. 
+So : answer0 ≥ answer1 ≥ ... ≥ ourAnswer 
+So we showed answer0 ≥ ourAnswer
+
+
+Time Complexity: O( N log(N) )
+Required Knowledge: Greedy, Sorting

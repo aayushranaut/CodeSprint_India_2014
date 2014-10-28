@@ -1,0 +1,7 @@
+The total time having payed C dollars can be solved using dynamic programming. Let's define the state as DP[i][j] - the least time for merging up into one stack the interval i, j. 
+The transition is the minimum of DP[i][k]+DP[k+1][j] + the time for merging up the interval i,k with k+1,j into one stack for all k in the range (i<=k
+It's clear as more we pay the time required will never increase. So we can use binary search for finding the optimal C.
+
+
+Time Complexity: O(n^3 * log(n))
+Required Knowledge: Dynamic Programming

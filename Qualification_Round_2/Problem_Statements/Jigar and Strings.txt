@@ -1,0 +1,24 @@
+Jigar is playing with strings. He likes a string, if all the characters in it are repeated the same number of times. We are given a string of length n, what is the minimum number of changes we have to make in this string so that Jigar likes it? We are only allowed to use lowercase English letters, and we can change any letter to any other letter.
+
+Input Format 
+The first line contains an integer T, the number of test cases. This is followed by T test cases each containing 1 line: 
+Each testcase consists of a string composed of lowercase letters.
+
+Output Format 
+For each testcase, print in a new line the minimum number of changes required.
+
+Constraints 
+1 ≤ T ≤ 1370 
+1 ≤ n ≤ 1991 
+
+Sample Input 
+
+2
+bbaccaaa
+ccaacb
+Sample Output 
+
+2
+1
+Explanation 
+One possible solution to first test is bbabbaaa. We have changed 2 'c' to 2 'b'. Now both 'a' and 'b' are repeated 4 times and Jigar would like this string. 

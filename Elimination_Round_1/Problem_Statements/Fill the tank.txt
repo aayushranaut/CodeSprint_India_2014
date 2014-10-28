@@ -1,0 +1,48 @@
+Let's say you have a very large water tank and B empty buckets. You also know the capacity (in liters) for each of these buckets.
+
+Given Q integers, is it possible to fill the tank exactly up to each one of these given integers?
+
+You can use each bucket any number of times, but whenever a bucket is used, it must be filled completely with water, i.e., partially-filled buckets cannot be used.
+
+Input Format 
+The first line contains two integers B and Q separated by a single space, representing the number of buckets and the number of queries respectively. The next line contains exactly B space separated integers: ith integer represents the capacity of ith bucket in liters. Each of the next Q lines contains an integer C, indicating the amount of water (in liters) that must be filled in the tank.
+
+Output Format 
+For each query, output a line containing "yes" if it is possible to fill the tank exactly with the requested amount of water. Otherwise, print "no" (quotes for clarity).
+
+Constraints
+
+1≤B≤50 
+1≤Q≤10^5 
+1≤C≤10^9 
+1≤Bi≤10^6
+Sample Input #00
+
+3 2 
+5 3 9 
+13 
+7 
+Sample Output #00
+
+yes
+no
+Explanation #00
+
+For the first query, we can use the first bucket 2 times and the second one 1 time. 5 + 5 + 3 = 13, hence yes.
+
+Sample Input #01
+
+8 5
+9 81 27 72 90 9 9 9000
+108
+10123
+11115
+1235
+99018
+Sample Output #01
+
+yes
+no
+yes
+no
+yes

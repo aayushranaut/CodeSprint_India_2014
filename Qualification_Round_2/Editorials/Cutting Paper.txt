@@ -1,0 +1,5 @@
+The idea to solve the problem is dynamic programming, the first step is identify the optimal substructure. Let define dp[i][j] the minimum number of square to cut a rectangle with sizes i and j, we can calculate it through lesser rectangles. The key is making horizontal and vertical cuts to find the minimum for the current rectangle.
+
+
+Time Complexity: O(N ^ 3)
+Required Knowledge: Dynamic programming

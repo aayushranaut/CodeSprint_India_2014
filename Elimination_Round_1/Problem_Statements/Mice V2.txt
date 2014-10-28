@@ -1,0 +1,38 @@
+n mice are playing in the desert, when one of them notices some hawks flying in the sky. It alerts the other mice who now realize that the hawks are going to attack them very soon. They are scared and want to get inside holes to ensure their safety.
+Mice and holes are placed on a straight line. There are m holes on this line. Each hole can accommodate only 1 mouse. A mouse can either stay at its position, or move one step right from x to x+1, or move one step left from x to x-1. Any of these movements takes 1 minute. 
+Assign mice to holes so that the time required for all the mice to move inside the holes is minimized.
+
+Input Format 
+The first line contains an integer T, the number of test cases. This is followed by T blocks of input: 
+
+First line contains 2 positive integers n and m separated by a single space. 
+Next line contains n space separated integers, denoting the positions of the mice. 
+Next line contains m space separated integers, denoting the positions of the holes. 
+Note: No two holes have the same position.
+
+Output Format 
+For each testcase, print the minimum time taken by all the mice to reach inside the holes.
+
+Constraints 
+1 ≤ T ≤ 17 
+1 ≤ n ≤ 131072 
+1 ≤ m ≤ 131072 
+n ≤ m 
+-10^8 ≤ mouse[i] ≤ 10^8 
+-10^8 ≤ hole[j] ≤ 10^8 
+
+Sample Input 
+
+1
+3 4
+2 0 -4
+3 1 2 -1
+Sample Output 
+
+3
+Explanation 
+One possible solution is : 
+Assign mouse at position x=-4 to hole at position x=-1 -> 3 minutes 
+Assign mouse at postion x=2 to hole at position x=2 -> 0 minutes 
+Assign mouse at postion x=0 to hole at postion x=3 -> 3 minutes 
+So the answer is 3, after 3 minutes all of the mice are in the holes.

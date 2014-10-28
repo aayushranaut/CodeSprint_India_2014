@@ -1,0 +1,4 @@
+Find the largest common multiple ( lcm ) of all the `m` numbers. Lets call it `L`. We need to calculate the number of multiples of `L` which are smaller or equal to `n`. It equals to `n/L`.
+
+
+Required Knowledge: Basic Mathematics

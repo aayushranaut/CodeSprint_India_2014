@@ -1,0 +1,6 @@
+All letters must have the same frequency at the end, let's call the shared frequency F, and there are K different letters in the string at the end, then F x K = n, So we can iterate over all divisors of n and check every possible choice for F, then K = n / F. So now we need to have K different letters and each of them must be repeated F times. If we sort the frequency of the letters in decreasing order, then it's better to use the first K of them. What happens to the first K of them?
+All of the first K letters must be repeated F times, so if any of them is repeated more than F times, then they must be changed to something else.
+What happens to the other letters? (no the first K letters) All of them must be changed, because we need K different letters, not more. The point is that when we know for sure that a letter is going to be changed to something else, it's not important to what letter we are changing it, we are just sure about the fact that it must be changed.
+
+
+Required Knowledge: Brute force, Greedy

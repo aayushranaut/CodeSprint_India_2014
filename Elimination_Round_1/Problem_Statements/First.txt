@@ -1,0 +1,24 @@
+You are given a string s that contains lowercase letters only.
+
+Its length is N. Find lexicographically smallest Good string for the given string s.
+
+A Good string is defined as follows:
+
+Good string contains only lowercase letters.
+Good string does not exist as sub-string in the s.
+Input Format 
+Input contains the string s.
+
+Output Format 
+Print in a line, the smallest Good string for the given string s.
+
+Constraints 
+1≤N≤105
+Sample Input
+
+bb
+Sample Output
+
+a
+Explanation 
+"a" is not a sub-string of "bb", and hence is the smallest Good String.

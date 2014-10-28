@@ -1,0 +1,11 @@
+Let's think we want to make k jumps, what is the range we can visit with k jumps? 
+If for every jump we choose the small step, then: 
+1 + 2 + 3 + 4 + ... + k = k * (k+1) / 2 
+If for every jump we chooose the large step, then: 
+2 + 3 + 4 + 5 + ... + (k+1) = (k+1)*(k+2)/2 - 1
+So we can visit any point in range [k * (k+1) / 2, (k+1)*(k+2)/2 - 1] with k jumps.
+So we will test every possible k until we hit x.
+
+
+Time Complexity: SQRT( N )
+Required Knowledge: Ad hoc - Math

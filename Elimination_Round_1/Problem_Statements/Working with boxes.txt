@@ -1,0 +1,47 @@
+A warehouse contains N boxes in a single line. The administrator of the warehouse wants to merge them to form a single stack.
+
+The workers can take 2 consecutive non-empty stacks of boxes i and i+1 (A single box is a stack as well) and merge them into a new stack at position i. This is counted as one operation. The time in minutes for the operation is the total weight (W1) multiplied by the number of boxes (N1) in one stack, plus, the total weight (W2) multiplied by the number of boxes (N2) in the other stack: W1 * N1 + W2 * N2. 
+Two operations cannot happen at the same time.
+
+The administrator sets a deadline of T minutes, so the work must be finished in T minutes or less. The workers can use a crane to work faster. This crane will reduce the time taken for every operation by C minutes, if you pay to the operator a non-negative amount of dollars(C). So this operation takes time: W1 * N1 + W2 * N2 - C.
+
+What is the minimum value of C that will ensure that the work is finished in no more than T minutes?
+
+Update 
+If the operation time < 0 at any point of time, the the time taken is 0.
+
+Input Format 
+The first line contains 2 numbers N and T . Next follows a line with N integers Wi - the weight of each box.
+
+Constraints
+
+1≤N≤100 
+1≤T≤106 
+1≤Wi≤100
+
+Output Format 
+Output just one line, the minimum value of C that will ensure that the work is finished in T minutes or less.
+
+Sample Input
+
+4 15
+1 1 2 2
+Sample Output
+
+1
+Explanation 
+
+for C = 0: 
+The optimal way to make a singe stack: 
+Step 1: Stacking 1st and 2nd boxes in time 1*1+1*1. creates a new line of stacks with weights 2 2 2 and amount of boxes 2 1 1.
+
+Step 2: Stacking 2nd and 3rd boxes in time 2*1 + 2*1 creates a new line of stacks with weights 2 4 and amount of boxes 2 2.
+
+Step 3: Stacking 1st and 2nd boxes in time 2*2 + 4*2 creates a single stack. The total time is 2 + 4 + 12 = 18. The dead line is 15 minutes and it is not reached.
+
+for C = 1: 
+Step 1: Stacking 1st and 2nd boxes in time 1*1+1*1 - 1 creates a new line of stacks with weights 2 2 2 and amount of boxes 2 1 1.
+
+Step 2: Stacking 2nd and 3rd boxes in time 2*1 + 2*1 - 1 creates a new line of stacks with weights 2 4 and amount of boxes 2 2.
+
+Step 3: Stacking 1st and 2nd boxes in time 2*2 + 4*2 - 1 creates a single stacks. The total time is 1+3+11 = 15. Finally the deadline is reached for C = 1.

@@ -1,0 +1,23 @@
+In order to make an optimal assignment we need to decide which holes we want to use in our assignment. 
+"To make a good assignment with T" means do the assignment so that each mouse gets to his hole in at most T minutes. 
+The key point to solving this challenge is this: 
+k ≥ 0 
+For T = 0, It's impossible to make a good assignment. 
+For T = 1, It's impossible to make a good assignment. 
+For T = 2, It's impossible to make a good assignment. 
+... 
+For T = k-1, It's impossible to make a good assignment. 
+For T = k, It's possible to make a good assignment. 
+For T = k+1, It's possible to make a good assignment. 
+... 
+For T = INFINITY, It's possible to make a good assignment. 
+In other words if we can make a good assignment with A then it is also possible to make a good assignment with any B ≥ A, and if it's impossible to make a good assignment with C then it is also impossible to make a good assignment with any D ≤ C. 
+This fact lets us use binary search to find k. So now we need to write a function that tells us whether it is possible to make a good assignment with the given R or not. 
+First of all we will sort both the mice and the holes in increasing order of their coordinate. From now on we will work with the sorted version of them. 
+In the function we are about to write we can ignore a hole but we can not ignore a mouse and each mouse must be assigned to a hole. 
+What is the best choice for m1? The first hole that |m1 - hi| ≤ R, then we will remove the first mouse and the first i holes and solve the rest. 
+We will continue this until no hole lefts anymore. At that point if we have assigned n mice to holes then it is possible, othewise it's not possible to make a good assignment with R. Since we are assigning the mice in increasing order of their coordinate, if mi can be assigned to h5, h6, 7 and 8 then it is better to assign this mouse to h4, in this situation mi+1 has the chance to be assigned to h5.
+
+
+Time Complexity: O( N log(N) )
+Required Knowledge: Sorting, Binary Search, Greedy, Two pointers

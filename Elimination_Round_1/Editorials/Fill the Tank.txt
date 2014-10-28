@@ -1,0 +1,15 @@
+First, one can think about a dynamic programming approach, where DPij is true if using the buckets 1..i we can reach an amount of j liters. This is the classical coin change problem. This yields to a O(BC) if implemented correctly, and for each query we could answer in O(1) time. This should timeout since B≤50 and C≤109.
+To solve it, one must see that Xi is relatively small, and maybe it could be useful while designing an algorithm. We are interested in solving the following equation:
+X1K1 + X2K2 + X3K3 + . .. + XBKB = C
+Where Xi is the capacity of the bucket i, and Ki is the number of times we are using the bucket i (Ki≥0 for all i). If we take this equation modulo X1 (later it will be clear why we chose X1, in fact it does not matter which Xi we pick) then we got:
+2) X1K1 + X2K2 + X3K3 + . .. + XBKB = CmodX1
+
+Then, if we can solve the equation 2, can we use it to solve 1? The answer is yes, but first let’s focus on how to solve equation 2. Let’s build a graph, where each node represents a possible value of the amount of litres of water in the tank. Since we are working on modulo X1 here, there will be X1 nodes. The edges will be for each value (node) using a bucket and going to another amount of water modulo X1. Does it makes sense? If using a BFS we reach the node CmodX1 then there is a way to solve equation 2. It does not matter how many times we have used the buckets, since they are unlimited. The graph will contain at most X1 nodes and B transitions (per node), that makes the runtime O(X1B), which is good so far since X1≤106 and B≤50, but this is still not enough to solve the problem. Suppose we reached CmodX1 filling the tank with some D liters of water. Remember that D≡CmodX1. If D≤C then it means that we have a solution for equation 1, because: 
+
+3) D+X1K1=C
+
+But there is still a problem, what if D > C? This makes K1<0 in the above equation. And how do we track the value of D in the BFS? First, if there is a value of D such that D≤C, then there is an answer, so we must focus in finding the smallest value possible for D, if this value is ≤C then there is clearly no answer. And also, I should mention that if there isn’t a path from node 0 to node CmodX1, then there is no answer as well. Finding the smallest possible D, clearly can be solved using a fast shortest path algorithm, namely Djkstra algorithm, getting a O(X1B×log(X1B)) complexity. Since it is equivalent to pick any Xi, picking min(Xi) is definitively a good idea.
+
+
+Time Complexity: O(min(Xi) × B × log (min(Xi) × B))
+Required Knowledge: Maths, Graph Theory

@@ -1,0 +1,31 @@
+Roy was checking the performance of n contestants of his university in CodeSprint. Each of them gained some non-negative integer score. Roy wanted to know the number of people among them who gained an above average score.
+
+Input Format 
+The first line of input contains t, the number of testcases. 
+Each of the following t lines starts with an integer n, number of contestants, followed by n space separated integers. The ith integer is the score gained by ith contestant.
+
+Constraints 
+1≤t≤104 
+1≤n≤100 
+None of the scores will exceed 100.
+
+Output Format 
+For each testcase, print a line containing the number of contestants with above average score in a separate line.
+
+Sample Input
+
+3
+3 1 2 3
+2 2 2
+4 8 1 4 2
+Sample Output
+
+1
+0
+2
+Explanation 
+In the first test case, average of scores is 2. Only one contestant has a score more than 2.
+
+In the second test case, average is 2 and none of the contestants have a score greater than that.
+
+In the third test case, average is 3.75, contestants with scores 8 and 4 have above average scores.

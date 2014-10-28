@@ -1,0 +1,45 @@
+Zodiac knights are taking part in a very special contest: the winner among them will have to defend the planet Earth from evil Hades in a deadly battle. The contest takes places in simple elimination rounds where the loser is taken out.
+
+In each round, 2 knights play the following game: N non-negative integers are given. Players take successive turns, and in each turn, they are allowed to flip active bits from any of the integers in the list. That is, they pick one (and only one) non-zero integer in the list and flip its as many active bits as desired. By flipping an active bit of an integer, we mean turning a bit from 1 to 0 in the binary representation of that integer. As this flipping continues, eventually all numbers in the list become zero. So the player who ends up turning the last non-zero integer to 0 in the list is the winner (or the player who cannot play on his turn loses).
+
+Being the Virgo's knight, Shaka is very concerned about his chances of winning the contest. Given a possible initial configuration, he needs help in determining if he can or cannot beat another player. Assume that both of them will play optimally (i.e. they do their best in each turn). Also assume that Shaka gets the first turn.
+
+Input Format 
+Input consists of several lines. First line contains an integer N indicating the size of the list. N lines follow, each containing a single integer from the aforementioned list.
+
+Output Format 
+Output a single line displaying "Shaka :)" without quotes if Shaka can beat his adversary on the given configuration. Otherwise, print "The other player :(" without quotes.
+
+Constraints:
+
+1 <= N <= 10000
+All numbers in the list will fit in a 32-bit signed integer and greater than 0.
+
+Sample Input #00
+
+2
+2
+9
+Sample Output #00
+
+Shaka :) 
+Explanation #00
+
+In this test case, all that the first player needs to do is to flip a single bit from 9. That leads to a position where the second player will always lose, because he is forced to flip just a single bit from any of the remaining numbers, leaving the other one to first player and thus, allowing him to win.
+
+Sample Input #01
+
+3
+8
+10
+290
+Sample Output #01
+
+The other player :(
+Explanation #01
+
+Here, no matter what the first player's move is, the second player will always have a winning strategy:
+
+If first player flips the only active bit in 8, a winning move for second player is to take away 1 bit from 290. From that position, second player needs to exactly copy the moves of first player. Following this strategy, second player will win.
+If first player removes 1 bit from 10, it is easy to see that removing all 3 active bits from 290 is a winning move for second player. If, on the other hand, first player removes both active bits from 10, then taking away just 2 bits from 290 is the way to go for second player, as the game reaches a position similar to one reached in first sample test case.
+For configurations reached by removing 1, 2 or 3 bits from 290, winning moves for second player are flipping the active bit from 8, flipping both active bits from 10 and flipping 1 bit from 10, respectively. The scenarios created as a result are similar to the ones already discussed

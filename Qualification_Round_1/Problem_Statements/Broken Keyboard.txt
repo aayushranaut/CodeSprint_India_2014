@@ -1,0 +1,37 @@
+Some keys of Roy's keyboard are broken. Given a word w, you have to tell him the minimum number of broken keys that need to be repaired to type w with this keyboard.
+
+Input Format 
+The first line contains t, the number of testcases. t testcases follow. 
+Each testcase consists of two lines: 
+the first line contains a string b that denotes the broken keys. 
+the second line contains w, the word to be typed.
+
+Constraints 
+1≤t≤105 
+1≤|b|≤26 
+1≤|w|≤100 
+Both b and w contain lowercase English letters only and all the characters in b are unique. 
+Note that, if s is a string, then |s| denotes the length of s.
+
+Output Format
+
+For each testcase, print the minimum number of keys needed to be repaired in a new line.
+
+Sample Input
+
+3
+ab
+bidhanroy
+xyz
+xy
+mitef
+committee
+Sample Output
+
+2
+2
+4
+Explanation
+
+Testcase 1: the letters a and b need to be repaired. 
+Testcase 2: the letters x and y need to be repaired.

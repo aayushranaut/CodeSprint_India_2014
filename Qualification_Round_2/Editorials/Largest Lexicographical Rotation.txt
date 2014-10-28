@@ -1,0 +1,8 @@
+Build all possible `p′`s from `p` and calculate the lexicographically biggest one. As the maximum length is `1000`, we can build each each `p′` in `O(N)` ( where `N` is the length of `p` ) and also check them in `O(N)`. We will have at most `N` different `p′`s.
+To build `p′`s, select every index `i(0≤i<|p|)` and place the substring `p[0,⋯,i−1]` at the end `(` if `i=0`, then `p[0,⋯,i−1]` will be empty string `)`.
+Select the lexicographically biggest `p′`.
+
+
+
+Time Complexity: O(N^2)
+Required Knowledge: Ad Hoc

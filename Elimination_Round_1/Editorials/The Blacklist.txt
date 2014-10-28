@@ -1,0 +1,6 @@
+This problem can be solved using Dynamic programming. The space would be N * 2^K. How many gangsters left, having used some mercenaries before, a bitmask.The transition would be N * K, for every mercenary it's not active in the mask (It has not been used before), we assign him to eliminate a consecutive blacklist's segment.
+The bitmask in needed because the mercenaries just can eliminate a consecutive segment.
+
+
+Time Complexity: O(N^2 * 2^K * K)
+Required Knowledge: Bitmask, dp.

@@ -1,0 +1,38 @@
+Bidhan and Roy are very close friends. They know every little secret of each other. Today Roy forgot his ATM card's pin code. So, he called Bidhan and asked if he can remember the code. Bidhan does not remember the exact code. But he told Roy that, the pin code is a positive number not bigger than n and it is divisible by m other numbers. Then Bidhan gave Roy the list of m numbers.
+
+Now, Roy has to try all possible combinations for his pin code. How many are possible?
+
+Input Format
+
+The first line of input will contain t, the number of test cases. Each testcase will consist of two lines. The first line will contain n and m. The second line will contain m space separated integers.
+
+Constraints
+
+1≤t≤105 
+1≤n≤104 
+1≤m≤10 
+All of the m integers will be positive and will not exceed 10.
+
+Output Format
+
+For each testcase, print the number of possible pin codes on a separate line.
+
+Sample Input
+
+3
+5 1
+1
+7 2
+2 3
+10 3
+2 2 4
+Sample Output
+
+5
+1
+2
+Explanation
+
+Test case 1 : The possible pin codes are, 1,2,3,4 and 5. All of them are divisible by 1. 
+Test case 2 : The only number smaller than 7 which is divisible by both 2 and 3 is 6. 
+Test case 3 : The possible pin codes are 4 and 8.

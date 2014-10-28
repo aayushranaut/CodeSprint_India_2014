@@ -1,0 +1,12 @@
+Let S(x)={x,xx,xxx,xxxx,...}. It means S(x) contains all of the strings where all of its elements are "x".
+
+And let set U={any string in the world}.
+
+It is obvious that ∀s∈S(a)≤∀t∈(U−S(a)) where s and t denotes a string.
+
+Which means our answer is allways in this format : "aaaa...a".
+After then we will find the longest substring at the input and also element of S(a) and append one more a to it's end.
+This will be our answer. One can easily do the last part with O(N) complexity.
+
+
+Time Complexity: O(N)

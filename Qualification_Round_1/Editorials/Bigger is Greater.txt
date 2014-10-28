@@ -1,0 +1,13 @@
+We can find the next largest lexicographic string for a given string S using the following step.
+Iterating over every character, we will get the last value i (starting from the first character) that satisfies the given condition
+S[i] < S[i + 1]
+Now, we will get the last value j such that
+S[i] < S[j]
+We now interchange S[i] and S[j]. And for every character from i+1 till the end, we sort the characters. i.e.,
+sort(S[i+1]..S[len(S) - 1])
+The given string is the next largest lexicographic string of S.
+One can also use next_permutation function call in cpp.
+
+
+Time Complexity: O(N)
+Required Knowledge: Lexicographic Strings

@@ -1,0 +1,5 @@
+We need to parse the array twice, during the first read we have to calculate the sum of the array to get it's average. While parsing the second time, we have to check if the element currently being read is greater than the average value or not.
+
+
+Time Complexity: O(N)
+Required Knowledge: Basic Implementation

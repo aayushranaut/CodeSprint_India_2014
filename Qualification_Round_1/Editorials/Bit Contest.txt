@@ -1,0 +1,17 @@
+We can precompute the number of 1s in every number before hand and store it in an array. 
+But wait, as the possible numbers whose bits are to be stored are about 2^32−1, the array stored can throw a memory error. 
+We can however store only 2^16 entries in the array, and then get the number of bits of a number by using a MASK that 
+gets us the most significant bits and the least significant bits of the array. The MASK is
+						(1 << 16) - 1
+We can first calculate the number of 1s in all numbers from 0 to 2^16−1 using a simple dynamic programming.
+If we call dp[i] as the number of 1s in the binary representation of i, then
+dp[i] = dp[i >> 1] + (i & 1) why?
+Now, for any number i such that i can fit in a 32 bit integer variable, we can get the number of 1s
+in it's binary representation by using the formula,
+				bit_count(i) = dp[(i >> 16) & MASK] + dp[i & MASK]
+The second part of the problem is a simple sprague grundy theorem implementation. i.e., the game is a 1st player win if the bit wise xor of all numbers is non-zero and 2nd player otherwise.
+
+
+
+Time Complexity: O(N)
+Required Knowledge: Sprague Grundy Theorem, Bit Manipulation
