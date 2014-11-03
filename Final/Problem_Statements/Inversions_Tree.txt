@@ -1,0 +1,129 @@
+Let's recall inversions.
+
+In the array of integers A, we call a pair (i,j) an inversion in case the this conditions holds: i<j and Ai > Aj.
+
+Let's say, that on the rooted tree T with numbers written on the nodes, a pair of nodes indexed (x,y) is an inversion in case the following holds: x is ancestor (perhaps non-direct) of y and Tx > Ty, where by Tz we denote the number written on the node indexed z. So, as you can see that if the tree is a line, it duplicates the standard definition.
+
+You will be given a rooted tree T consisting of N nodes. The nodes are indexed in range [1,N] and the node with index 1 is the root. There is one number written on each node. Find the number of inversions in T.
+
+This is not all. We will also give you M modification queries. The modification query is as follows: it's described by two numbers A and B. It means that the number written on the node with index A will be updated to B.
+
+After each modification query we ask you to output the number of inversions in the new tree T.
+
+Input format 
+The first line of input contains two space separated integers N and M: the number of nodes in the tree and the number of modification queries respectively. 
+
+The second line contains N numbers: the numbers, initially written in the nodes of T. The ith such an integer corresponds to what is written in the node with index i. 
+The next N−1 lines describe edges of the tree. Each one contains a pair of integers, X Y, with the meaning that there is an edge between the node with the index X and the node with the index Y. 
+
+Then there are M lines denoting the modification queries each one contains two space separated integers A and B. Their meaning is that the number written on the node with the index A will be updated to B.
+
+Output format 
+Output the initial number of inversions in T on the first line on output. On each of the following M lines display the number of inversions after modification queries are executed in the order.
+
+Constraints 
+1≤N,M≤100000 
+1≤Tx≤100000 
+1≤A,X,Y≤N 
+1≤B≤100000
+
+Sample Input:
+
+6 5
+5 10 3 4 6 5 
+1 2
+2 3
+3 4
+1 5
+1 6
+6 8
+2 5
+5 3
+1 10
+5 2
+Sample Output
+
+4
+4
+4
+5
+7
+7
+Explanation 
+Initially tree will be
+
+      1(5)
+      /|\ 
+     / | \
+    /  |  \
+ 5(6)  |  2(10)
+       |    \
+      6(5)  3(3)
+              \
+              4(4) 
+There are 4 pair of nodes with inversion: (1,3),(1,4),(2,3),(24).
+
+Update 1: (6 8) Number at node #6 will be updated to 8. So new tree will be
+
+      1(5)
+      /|\ 
+     / | \
+    /  |  \
+ 5(6)  |  2(10)
+       |    \
+     6(8)*  3(3)
+              \
+              4(4) 
+Here same pair of nodes will be counted again: (1,3),(1,4),(2,3),(24).
+
+Update 2: (2 5) Again node #2 will be updated, and new tree will be
+
+      1(5)
+      /|\ 
+     / | \
+    /  |  \
+ 5(6)  |  2(5)*
+       |    \
+      6(8)  3(3)
+              \
+              4(4) 
+Since node 2 is still greater than all it's children, answer will not change.
+
+Update 3: (5 3) Number at node #5 will be 3. So tree will be
+
+      1(5)
+      /|\ 
+     / | \
+    /  |  \
+ 5(3)* |  2(5)
+       |    \
+      6(8)  3(3)
+              \
+              4(4)
+Apart from all pairs from previous update, pair (1,5) will be new pair with inversion. So in total there are 5 such pairs.
+
+Update 4: (1, 10) Now updating number at root to 10 will result into following tree
+
+     1(10)*
+      /|\ 
+     / | \
+    /  |  \
+ 5(3)  |  2(5)
+       |    \
+      6(8)  3(3)
+              \
+              4(4)
+There will be 7 pair of nodes with inversion: (1,2),(1,3),(1,4),(1,5),(1,6),(2,3),(2,4)
+Update 5: (5 2) Updated tree will be
+
+      1(10)
+      /|\ 
+     / | \
+    /  |  \
+ 5(2)* |  2(5)
+       |    \
+      6(8)  3(3)
+              \
+              4(4)
+Even though the number at node #5 changes, it will still result into inverse pair (1, 5). So again total number of such pairs will be 7.
+

@@ -1,0 +1,53 @@
+There is a long straight race track consisting of n+1 pit stops (the 1st pit stop is at the start of the race track, and the (n+1)th pit stop is at the end of the race track). The distance between ith and (i+1)th pit stop is equal to li. If someone reaches ith pit stop, the mechanic of the pit stop will add ai fuel into the fuel tank of the racing car.
+
+Imagine you start at pit stop x. You will follow this scheme:
+
+You wait while mechanic is adding the fuel at the current pit stop. Then if you have enough fuel (you spend a unit fuel for travelling a unit length) to reach the next pit stop, you will go to the next pit stop. Then algorithm repeats.
+If you do not have enough fuel or you are currently at the last pit stop, you will end the race.
+You are given q queries to perform. Each of them is either:
+
+change the amount of fuel in the car at the xth pit stop to y (that is ax=y), or
+print, what is the farthest pit stop you can reach if you start race with no fuel at pit stop x.
+Input Format
+
+The first line contains an integer n. The next line contains n space separated integers l1,l2,...,ln. The next line contains n space separated integers a1,a2,...,an.
+
+Then follows the line with integer q. Each of the next line contains the description of a query. If the query is of first type, the line contains three integers 1 c d (changing the amount of fuel at pitstop c to d), else the query is of second type and the line contains two integers 2 e ( print the farthest pitstop one can reach if you start the race with 0 fuel at pitstop e ).
+
+Constraints 
+1≤n≤105 
+1≤li≤109 
+0≤ai≤109 
+1≤q≤105 
+1≤c≤n; 0≤d≤109 
+1≤e≤n
+
+Output Format
+
+For each query of the second type, print the pit stop number where you will end the race.
+
+Sample Input
+
+3
+1 2 1
+2 1 1
+8
+2 1
+2 2
+2 3
+1 2 2
+2 2
+1 3 0
+2 1
+2 2
+Sample Output
+
+4
+2
+4
+4
+4
+3
+Explanation
+
+Look at the sample testcase. The first query starts from 1st pit stop, where you get 2 fuel. Then you spend 1 fuel for the road from 1st pit stop to the 2nd one. On the 2nd pit stop you get 1 fuel. Then you spend 2 fuel for the road from 2nd pit stop to the 3rd one (now you have no fuel). At the 3rd pit stop you get 1 fuel and go to the last pit stop. So, the answer is last pit stop, that is, the 4th.

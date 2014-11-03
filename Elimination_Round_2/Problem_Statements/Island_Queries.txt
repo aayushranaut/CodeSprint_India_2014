@@ -1,0 +1,48 @@
+Imagine you have an array, some of whose cells are colored. We will call such a group of contiguous colored cells an island if it cannot be extended further.
+
+You are given p permutation and q queries. Each query denotes either one of these:
+
+Swap 2 elements of permutation.
+
+Calculate how many islands will get formed if you color all the cells whose value is less than or equal to x, while all other cells remain uncolored.
+
+You are to perform all the queries.
+
+Input Format
+
+The first line contains 2 space-separated integers n and q, where n is the length of the permutation and q is the number of queries. The next line contains n distinct space separated integers p1,p2,…,pn.
+
+Each of the next q lines contains several integers describing a query. The first integer in the line is the type of the query (either 1 or 2). If the query is of the first type, then 2 space separated numbers v1 v2 will follow. These numbers denote the elements of the permutation that should be swapped (Note, numbers do not denote the positions, they denote value of the cells). If the query is of the second type, then a single number x follows.
+
+Constraints 
+1≤n,q≤200000 
+1≤pi≤n 
+1≤v1,v2≤n 
+1≤x≤n
+
+Output Format
+
+For each query of the second type print an answer.
+
+Sample Input
+
+3 7
+1 2 3
+2 1
+2 2
+2 3
+1 2 3
+2 1
+2 2
+2 3
+Sample Output
+
+1
+1
+1
+1
+2
+1
+Explanation
+
+In the sample testcase, there is only one query whose answer is 2. At that moment permutation is equal to 1 3 2. So, you can see if we color 1 and 2, there will be two islands.

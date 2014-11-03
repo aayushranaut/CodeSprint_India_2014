@@ -1,0 +1,34 @@
+You are given a number k and a sequence of integers a1,a2,…,an. You want to ensure that all the numbers in the sequence are same. To do that, you can increase a single contiguous sequences of array by 1 in 1 operation. (See the sample testcase)
+
+Let f(h) denote the minimal number of such operations required to change all the numbers to h. How many different integer h satisfy the inequality f(h)≤k?
+
+Input Format 
+The first line contains two space separated integers n and k. 
+The next line contains n space-separated integers a1,a2,…,an.
+
+Constraints 
+1≤n≤105 
+ 0≤k≤1010 
+1≤ai≤105
+Output Format 
+Output the only integer − the number of different hs.
+
+Sample Input #00
+
+3 3
+1 2 1
+Sample Output #00
+
+2
+Sample Input #01
+
+2 0
+1 2
+Sample Output #01
+
+0      
+Explanation
+
+In the first sample testcase, you can get all the numbers equal to 2 and 3 with at most 3 operations. Here n = 3 and k=3 
+for h = 2 : [1 2 1] --> [2 2 1] --> [2 2 2] : f(2) = 2 
+for h = 3 : [1 2 1] --> [2 2 1] --> [2 2 2] --> [3 3 3] : f(3)=3

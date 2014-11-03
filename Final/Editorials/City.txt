@@ -1,0 +1,7 @@
+You can also check the editorial on my blog: http://chasethered.com/?p=449
+
+Long story short, you are given a multiset S of k numbers in a range [1,n]. The task is to print these ones which have an odd number of divisors and for each such number, you have to print also the number of times that it is presented in S.
+
+The crucial thing here is to decide if a number a has an odd number of divisors. The most clever way of doing that is to check if a is a square number, because only square numbers have an odd number of divisors - every divisor besides a square root of a has an unique paired divisor.
+
+I included my code below because it is very short and self-explanatory. The time complexity of this method is O(k+n), but more important it is very quickly to code.

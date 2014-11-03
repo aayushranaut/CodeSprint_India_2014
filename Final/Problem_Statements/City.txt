@@ -1,0 +1,37 @@
+A contest is organized to find the most beautiful city in the world. N cities take part in the contest and they are indexed from 1 to N (from east to west). The jury is unable to explicitly choose the winner, so they decide to do the following: 
+
+K travelers are chosen from the volunteers across the world. Each one of them travels across the world (from east to west) N times. During the ith trip, a traveler visits only those cities whose index is divisible by i. 
+
+Every traveler has one (unique) award at his disposal, and he has one favorite city which he considers as the most beautiful. Let's represent jth traveler's favorite city by mj. During the trip, whenever jth traveler visits his favorite city, mj, one of following things happen:
+
+If the traveler has the award, he gives it to the city.
+If traveler has already given the award, he takes it back. Note that each traveler can give/take only his award.
+
+After all the K travelers have finished their journey, each city will have a non-negative number of awards. Your task is to print out the indices of cities which have at least one award, and for each such city you should print the number of awards owned by it.
+
+Input 
+In the first line there is one number, N, denoting the number of cities. 
+In the second line there is one number, K - the number of travelers. Each of the next K lines contains mi - the index of city which the ith traveler considers the most beautiful.
+
+Output 
+If after the process, Y cities have at least 1 award, print Y lines. In each of those lines print two numbers: ci (index of city) and xi (number of awards which ci will have). Print cities in increasing order of their indices.
+
+Constraints 
+1≤N≤106 
+1≤K≤106 
+1≤mi≤N,where i in [1,K]
+Sample Input
+
+5
+2
+3
+4
+Output
+
+4 1
+Explanation
+
+After the trips are over, city #4 has 1 award received from the second traveler, while any other city doesn't have any awards.
+
+1st traveler will pass through city #3 two times, at 1st trip and at 3rd trip.
+2nd traveller will pass through city #4 three times, at 1st, 2nd and 4th trip.

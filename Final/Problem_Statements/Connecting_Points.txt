@@ -1,0 +1,45 @@
+John has his own 3-dimensional space. He currently has N distinct points that belong to this space.
+
+Today John is connecting the points with each other. In each step, he chooses two points and connects them together by drawing a curved line between them. After that he always puts single point somewhere on the curved line. Note that this point initially has 2 connections, and it can be further connected by curve lines with others. Also note that multiple curved-lines can be drawn between each pair of points. 
+
+There is one condition: each point which currently has strictly less than K connections can be used for making new connections again. 
+
+John wants to maximize total number of drawn curve lines. Help him and calculate how many curve lines can John draw. Note that a pair of point can be connected multiple times with different curved lines.
+
+PS: Refer to the explanation/image given below for more clarity.
+
+Input Format 
+The first line contains a single integer T, representing the number of test cases to follow. Each of the following T lines (or testcases) contains two integers separated by single space: N - the number of points in three-dimensional space, K - number of maximum connections that can be made for the present testcase.
+
+Output Format 
+For each of the test case, print the count of drawn curve lines, or −1 if John will never end connecting the points.
+
+Constraints 
+1≤T≤50 
+1≤N≤109 
+0≤K≤10
+
+Sample Input:
+
+5
+7 0
+47 1
+2 2
+2 3
+3 10
+Sample Output:
+
+0
+23
+2
+5
+-1
+Explanation 
+Sample Case #00: Points are not allowed to be connected at all, so no curved-line can be drawn. 
+Sample Case #01: Since only one line can be drawn out of a point, at most 23 pair of points can be joined via curves. 
+Sample Case #02: John connects both points twice. It yields four points two initial and two appended. All points are connected twice. 
+Sample Case #03: Following picture illustrates the process of connecting the points. Orange points with three edges no longer can be connected. 
+
+https://hr-challenge-images.s3.amazonaws.com/3051/connecting-points.gif
+
+Sample Case #04: John will never stop adding points.
